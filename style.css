@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fcfbf4; /* Warm Cream background from image */
+  color: #4a4a4a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Decorative Background Blobs & Rainbow Accents */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.top-right {
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background-color: #cddcbe; /* Pastel Sage Green */
+}
+
+.bottom-left {
+  bottom: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  background-color: #cddcbe;
+}
+
+.rainbow {
+  position: fixed;
+  font-size: 2.5rem;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.top-left { top: 20px; left: 20px; }
+.bottom-right { bottom: 20px; right: 20px; }
+
+.app-container {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  max-width: 900px;
+  z-index: 10;
+}
+
+/* Left Panel */
+.main-panel {
+  flex: 1.2;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0eee2;
+}
+
+/* Right Pinned Panel */
+.pinned-panel {
+  flex: 0.8;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px dashed #b5cbd3;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* Aesthetic Handwritten Title */
+.aesthetic-title {
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+
+.aesthetic-subtitle {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: #5a7582;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 15px 0 12px 0;
+  color: #7a7a7a;
+}
+
+/* Form Styling */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.task-form input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #e0ddd0;
+  background-color: #fdfdf9;
+  color: #333333;
+  outline: none;
+  font-size: 0.95rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.task-form input:focus {
+  border-color: #b5cbd3;
+}
+
+.datetime-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.datetime-inputs input {
+  flex: 1;
+}
+
+#addBtn {
+  padding: 12px;
+  background-color: #b5cbd3; /* Pastel Blue */
+  color: #2c3e50;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#addBtn:hover {
+  background-color: #a0b8c2;
+  transform: translateY(-2px);
+}
+
+/* Task List & Striped Pastel Items */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-card {
+  padding: 14px 18px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+}
+
+/* 4 Rotating Pastel Colors Matched to Image */
+.color-0 { background-color: #b5cbd3; color: #233742; } /* Pastel Blue */
+.color-1 { background-color: #cddcbe; color: #2d3b22; } /* Pastel Green */
+.color-2 { background-color: #d8b4b4; color: #422424; } /* Pastel Pink */
+.color-3 { background-color: #d5b2c5; color: #3d2331; } /* Pastel Purple/Lilac */
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.task-time {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  margin-top: 3px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.complete-btn {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #2b2b2b;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #721c24;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Completed Section */
+.pinned-panel .task-card {
+  opacity: 0.75;
+}
+
+.pinned-panel .task-title {
+  text-decoration: line-through;
+}
+
+/* Celebration Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  border: 2px solid #cddcbe;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888888;
+}
+
+.quote-style {
+  font-style: italic;
+  margin: 15px 0;
+  color: #5a7582;
+  font-size: 1rem;
+}
+
+.modal-btn {
+  background-color: #cddcbe;
+  color: #2d3b22;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Pastel Confetti Animation */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  z-index: 99;
+  animation: fall 2.5s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

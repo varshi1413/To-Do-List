@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Aesthetic To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Cursive / Handwritten font for title -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Pure CSS Pastel Confetti Container -->
+  <div id="confettiContainer"></div>
+
+  <!-- Decorative Background Blob Shapes & Rainbows -->
+  <div class="blob top-right"></div>
+  <div class="blob bottom-left"></div>
+  <div class="rainbow top-left">🌈</div>
+  <div class="rainbow bottom-right">🌈</div>
+
+  <div class="app-container">
+    
+    <!-- Main Task Planner Panel -->
+    <div class="main-panel">
+      <h1 class="aesthetic-title">To do list</h1>
+      
+      <!-- Input Form -->
+      <div class="task-form">
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        
+        <div class="datetime-inputs">
+          <input type="date" id="taskDate">
+          <input type="time" id="taskTime">
+        </div>
+
+        <button onclick="addTask()" id="addBtn">Add Task ⏰</button>
+      </div>
+
+      <h3>Active Tasks</h3>
+      <ul id="pendingList" class="task-list"></ul>
+    </div>
+
+    <!-- Pinned Completed Tasks Panel -->
+    <div class="pinned-panel">
+      <h2 class="aesthetic-subtitle">📌 Completed Tasks</h2>
+      <ul id="completedList" class="task-list"></ul>
+    </div>
+
+  </div>
+
+  <!-- Motivational Celebration Modal -->
+  <div id="quoteModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>🎉 Great Job!</h2>
+      <p id="quoteText" class="quote-style"></p>
+      <button class="modal-btn" onclick="closeModal()">Keep Going! 💪</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
